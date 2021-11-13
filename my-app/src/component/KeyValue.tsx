@@ -1,7 +1,7 @@
 import React from "react";
 
 export const KeyValue: React.FC = () => {
-  const names = ['John','Bob','Mary'];
+  const names: Array<string> = ['John','Bob','Mary'];
   return (
     <>
       <ul>
