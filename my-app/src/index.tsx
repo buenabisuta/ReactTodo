@@ -9,18 +9,24 @@ import { Home } from './component/Home';
 import { KeyValue } from './component/KeyValue';
 import { ParentComponent } from './component/ParentComponent';
 import { UseEffectSample } from './component/UseEffectSample';
+import { Provider } from 'react-redux';
+import store from './Store';
+import { Home2 } from './component/Home2';
 
 ReactDOM.render(
-  <Router>
-    <Routes>
-      <Route path="/App" element={<App />} />
-      <Route path="/" element={<Home foo={'test'} />} />
-      <Route path="/Key" element={<KeyValue />} />
-      <Route path="/child" element={<ParentComponent />} />
-      <Route path="/effect" element={<UseEffectSample />} />
-      
+  <Provider store={store}>
+    <Router>
+      <Routes>
+        <Route path="/App" element={<App />} />
+        <Route path="/" element={<Home foo={'test'} />} />
+        <Route path="/Home2" element={<Home2 foo={'test'} />} />
+        <Route path="/Key" element={<KeyValue />} />
+        <Route path="/child" element={<ParentComponent />} />
+        <Route path="/effect" element={<UseEffectSample />} />    
     </Routes>
   </Router>
+
+  </Provider>
   ,
   document.getElementById('root')
 );
